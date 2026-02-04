@@ -94,7 +94,7 @@ function createGameCard(game) {
     if (game.link) {
         card.style.cursor = 'pointer';
         card.addEventListener('click', () => {
-            window.open(game.link, '_blank');
+            window.location.href = game.link;
         });
     }
 

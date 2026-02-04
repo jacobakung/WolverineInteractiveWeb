@@ -300,6 +300,86 @@ html {
     text-decoration: underline;
 }
 
+/* Game Detail Page */
+.game-hero {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+    color: var(--text-light);
+    padding: 120px 0 60px;
+    margin-top: 60px;
+}
+
+.game-hero-content {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.game-hero-icon {
+    width: 180px;
+    height: 180px;
+    border-radius: 28px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+}
+
+.game-hero-info {
+    flex: 1;
+}
+
+.game-hero-title {
+    font-size: 2.8rem;
+    margin-bottom: 0.75rem;
+}
+
+.game-hero-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+}
+
+.game-preview-section {
+    padding: 60px 0 80px;
+    background-color: var(--light-bg);
+}
+
+.game-video-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.game-video {
+    width: 100%;
+    display: block;
+    background: #000;
+}
+
+@media (max-width: 768px) {
+    .game-hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .game-hero-icon {
+        width: 140px;
+        height: 140px;
+    }
+
+    .game-hero-title {
+        font-size: 2rem;
+    }
+
+    .game-hero .game-platforms {
+        justify-content: center;
+    }
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {

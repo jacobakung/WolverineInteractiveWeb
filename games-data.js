@@ -13,8 +13,8 @@ const games = [
         title: "WordRush",
         description: "An exciting word puzzle game that challenges your vocabulary and quick thinking skills.",
         platforms: ["iOS", "Android"],
-        image: "WordRush.AppIcon.png",
-        link: null // Set to store link when available
+        image: "assets/ICON.png",
+        link: "wordrush.html"
     }
     // Add more games here as you develop them
     // Example:
