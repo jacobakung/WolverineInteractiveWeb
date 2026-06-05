@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RateMyJumper - Wolverine Interactive LLC</title>
+    <meta name="description" content="RateMyJumper - Rate the best jumpers in basketball and see how your picks stack up against other fans.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .game-hero-icon-placeholder {
+            width: 180px;
+            height: 180px;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Wolverine Interactive LLC Logo" class="logo" id="logo">
+                    <a href="index.html" class="company-name" style="text-decoration: none; color: var(--text-light);">Wolverine Interactive LLC</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#games">Games</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="game-hero">
+        <div class="container">
+            <div class="game-hero-content">
+                <div class="game-hero-icon-placeholder">R</div>
+                <div class="game-hero-info">
+                    <h1 class="game-hero-title">RateMyJumper</h1>
+                    <p class="game-hero-description">Rate the best jumpers in basketball and see how your picks stack up against other fans.</p>
+                    <div class="game-platforms">
+                        <span class="platform-tag">iOS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Wolverine Interactive LLC. All rights reserved.</p>
+            <p>
+                <a href="assets/RateMyJumper/Privacy%20Policy%20for%20RateMyJumper.pdf" target="_blank">Privacy Policy</a>
+                &nbsp;|&nbsp;
+                <a href="assets/RateMyJumper/Rate%20My%20Jumper%20Build.pdf" target="_blank">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Logo Visibility
+        const logo = document.getElementById('logo');
+        const logoImg = new Image();
+        logoImg.onload = function() {
+            logo.classList.add('visible');
+        };
+        logoImg.onerror = function() {
+            logo.classList.remove('visible');
+        };
+        logoImg.src = 'logo.png';
+    </script>
+</body>
+</html>

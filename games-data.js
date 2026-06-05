@@ -15,6 +15,12 @@ const games = [
         platforms: ["iOS", "Android"],
         image: "assets/ICON.png",
         link: "wordrush.html"
+    },
+    {
+        title: "RateMyJumper",
+        description: "Rate the best jumpers in basketball and see how your picks stack up against other fans.",
+        platforms: ["iOS"],
+        link: "ratemyjumper.html"
     }
     // Add more games here as you develop them
     // Example:
