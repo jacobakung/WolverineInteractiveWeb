@@ -3,77 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wolverine Interactive LLC - Game Development Company</title>
-    <meta name="description" content="Wolverine Interactive LLC - Creating engaging and innovative games">
+    <title>Wolverine Interactive — Independent Game Studio</title>
+    <meta name="description" content="Wolverine Interactive LLC is an independent studio making mobile games like WordRush and RateMyJumper.">
+    <meta name="theme-color" content="#0b0f1a">
+    <meta property="og:title" content="Wolverine Interactive — Independent Game Studio">
+    <meta property="og:description" content="Makers of WordRush and RateMyJumper.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wolverineinteractive.com/">
+    <meta property="og:image" content="https://wolverineinteractive.com/assets/icons/wordrush.png">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo-container">
-                    <img src="logo.png" alt="Wolverine Interactive LLC Logo" class="logo" id="logo">
-                    <span class="company-name">Wolverine Interactive LLC</span>
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="brand" aria-label="Wolverine Interactive home">
+                <span class="brand-mark" aria-hidden="true">W</span>
+                <span class="brand-name">Wolverine <span>Interactive</span></span>
+            </a>
+            <nav class="nav-links" id="navLinks" aria-label="Primary">
+                <a href="#games">Games</a>
+                <a href="#about">About</a>
+                <a href="#contact" class="nav-cta">Contact</a>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div>
+                    <p class="eyebrow">Independent game studio</p>
+                    <h1 class="hero-title">Small games you'll <em>keep coming back to.</em></h1>
+                    <p class="hero-subtitle">Wolverine Interactive makes quick, satisfying mobile games built to be played in the gaps of your day, then played again.</p>
+                    <div class="hero-actions">
+                        <a href="#games" class="btn btn-primary btn-lg">See our games</a>
+                        <a href="#contact" class="btn btn-ghost btn-lg">Get in touch</a>
+                    </div>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#games">Games</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <div class="hero-art" aria-hidden="true">
+                    <img class="art-1" src="assets/icons/wordrush.png" alt="">
+                    <img class="art-2" src="assets/icons/ratemyjumper.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="games">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Our games</h2>
+                    <p class="section-lead">Everything we've shipped so far. Tap a game to see more, or jump straight to the App Store.</p>
+                </div>
+                <div class="games-grid" id="gamesGrid"></div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container about-grid">
+                <div class="about-copy">
+                    <h2 class="section-title">About the studio</h2>
+                    <p>Wolverine Interactive LLC is a small independent studio. We design, build, and ship our own games, and we stay close to the people who play them.</p>
+                    <p>We like games with a simple hook and real depth: easy to pick up in the first ten seconds, hard to put down after that.</p>
+                </div>
+                <ul class="value-list">
+                    <li class="value-item">
+                        <h3>Quick to learn</h3>
+                        <p>No tutorials you have to sit through. The first round teaches you the game.</p>
+                    </li>
+                    <li class="value-item">
+                        <h3>Built for short sessions</h3>
+                        <p>Rounds that fit a bus ride, with reasons to come back tomorrow.</p>
+                    </li>
+                    <li class="value-item">
+                        <h3>Made by people who play them</h3>
+                        <p>Every mode ships because we wanted to play it ourselves.</p>
+                    </li>
                 </ul>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
             </div>
-        </div>
-    </nav>
+        </section>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Creating Engaging Gaming Experiences</h1>
-                <p class="hero-subtitle">Wolverine Interactive LLC brings innovative and exciting games to players worldwide</p>
-                <a href="#games" class="cta-button">Explore Our Games</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="games" class="games-section">
-        <div class="container">
-            <h2 class="section-title">Our Games</h2>
-            <div class="games-grid" id="gamesGrid">
-                <!-- Games will be dynamically loaded here -->
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-content">
-                <p>Wolverine Interactive LLC is a game development company dedicated to creating engaging and innovative gaming experiences. We focus on building games that bring joy and entertainment to players around the world.</p>
-                <p>Our team is passionate about game design, development, and delivering high-quality products that players love.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p>Interested in our games or want to learn more about Wolverine Interactive LLC?</p>
-                <div class="contact-info">
-                    <p><strong>Email:</strong> <a href="mailto:support@wolverineinteractive.com">support@wolverineinteractive.com</a></p>
+        <section class="section section-alt" id="contact">
+            <div class="container">
+                <div class="contact-card">
+                    <h2 class="section-title">Get in touch</h2>
+                    <p>Questions, feedback, press, or support for one of our games. We read everything.</p>
+                    <a class="btn btn-primary btn-lg contact-email" href="mailto:support@wolverineinteractive.com">support@wolverineinteractive.com</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Wolverine Interactive LLC. All rights reserved.</p>
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="brand" style="margin-bottom:12px">
+                        <span class="brand-mark" aria-hidden="true">W</span>
+                        <span class="brand-name">Wolverine <span>Interactive</span></span>
+                    </a>
+                    <p>An independent mobile game studio.</p>
+                </div>
+                <div>
+                    <h4>Games</h4>
+                    <ul>
+                        <li><a href="wordrush.html">WordRush</a></li>
+                        <li><a href="ratemyjumper.html">RateMyJumper</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="assets/documents/WordRush_PrivacyPolicy.pdf" target="_blank" rel="noopener">WordRush Privacy Policy</a></li>
+                        <li><a href="assets/documents/WordRush_TermsOfUse.pdf" target="_blank" rel="noopener">WordRush Terms of Use</a></li>
+                        <li><a href="assets/RateMyJumper/Privacy%20Policy%20for%20RateMyJumper.pdf" target="_blank" rel="noopener">RateMyJumper Privacy Policy</a></li>
+                        <li><a href="assets/RateMyJumper/RateMyJumper_TermsOfService.pdf" target="_blank" rel="noopener">RateMyJumper Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <span data-year>2026</span> Wolverine Interactive LLC. All rights reserved.</span>
+                <a href="mailto:support@wolverineinteractive.com">support@wolverineinteractive.com</a>
+            </div>
         </div>
     </footer>
 

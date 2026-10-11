@@ -3,100 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RateMyJumper - Wolverine Interactive LLC</title>
-    <meta name="description" content="RateMyJumper - Rate the best jumpers in basketball and see how your picks stack up against other fans.">
+    <title>RateMyJumper — Wolverine Interactive</title>
+    <meta name="description" content="RateMyJumper rates your basketball jump shot. Upload a jumper, get a crowd rating from head-to-head matchups, see how your form compares to NBA shooters, and play Guess the NBA Jumper.">
+    <meta name="theme-color" content="#0b0f1a">
+    <meta property="og:title" content="RateMyJumper — Wolverine Interactive">
+    <meta property="og:description" content="Upload your jump shot, get rated by the crowd and scored against NBA shooting forms.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wolverineinteractive.com/ratemyjumper.html">
+    <meta property="og:image" content="https://wolverineinteractive.com/assets/icons/ratemyjumper.png">
+    <link rel="icon" href="assets/icons/ratemyjumper.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .game-hero-icon-placeholder {
-            width: 180px;
-            height: 180px;
-            border-radius: 28px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            flex-shrink: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            font-weight: 700;
-            color: #fff;
-        }
-    </style>
+    <style>:root { --accent: #ff6a3d; }</style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo-container">
-                    <img src="logo.png" alt="Wolverine Interactive LLC Logo" class="logo" id="logo">
-                    <a href="index.html" class="company-name" style="text-decoration: none; color: var(--text-light);">Wolverine Interactive LLC</a>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#games">Games</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="brand" aria-label="Wolverine Interactive home">
+                <span class="brand-mark" aria-hidden="true">W</span>
+                <span class="brand-name">Wolverine <span>Interactive</span></span>
+            </a>
+            <nav class="nav-links" id="navLinks" aria-label="Primary">
+                <a href="index.html#games">Games</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact" class="nav-cta">Contact</a>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-    </nav>
+    </header>
 
-    <section class="game-hero">
-        <div class="container">
-            <div class="game-hero-content">
-                <div class="game-hero-icon-placeholder">R</div>
+    <main>
+        <section class="game-hero">
+            <div class="container game-hero-content">
+                <img src="assets/icons/ratemyjumper.png" alt="RateMyJumper app icon" class="game-hero-icon" width="200" height="200">
                 <div class="game-hero-info">
+                    <p class="breadcrumb"><a href="index.html#games">Games</a> / RateMyJumper</p>
                     <h1 class="game-hero-title">RateMyJumper</h1>
-                    <p class="game-hero-description">Rate the best jumpers in basketball and see how your picks stack up against other fans.</p>
-                    <div class="game-platforms">
-                        <span class="platform-tag">iOS</span>
+                    <p class="game-hero-description">Film your jump shot from the side and find out how it really looks. The crowd rates it head-to-head, and an AI baseline compares your form to the NBA's best shooters.</p>
+                    <div class="game-hero-actions">
+                        <a class="btn btn-primary btn-lg" href="https://apps.apple.com/app/id6776380978" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.63c-.02-2.3 1.88-3.4 1.96-3.45-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.97.9-3.77 2.28-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.02-1.13 2.78-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.42-.93-2.44-3.69zM14.09 5.9c.63-.77 1.06-1.84.94-2.9-.91.04-2.02.61-2.67 1.37-.58.68-1.1 1.77-.96 2.81 1.02.08 2.05-.52 2.69-1.28z"/></svg>Download on the App Store</a>
+                        <ul class="platform-list" aria-label="Platforms">
+                            <li class="platform-tag">iOS</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">How it works</h2>
+                    <p class="section-lead">Your shot is shown as a silhouette, so the rating is about the form, not the face.</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature">
+                        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 20h16"/></svg></div>
+                        <h3>Upload your jumper</h3>
+                        <p>Record a side-angle clip. The app checks it on your phone before anything is sent, then turns it into a clean silhouette.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3.5"/><circle cx="16" cy="16" r="3.5"/><path d="M4 20l16-16"/></svg></div>
+                        <h3>Crowd rating</h3>
+                        <p>Players pick the better shot in head-to-head matchups. Those picks become your 1 to 10 rating.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
+                        <h3>AI baseline</h3>
+                        <p>Elbow angle, release angle, knee bend, base width, and tempo are measured and compared to top NBA shooting forms.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 5 0c0 1.5-2.5 2-2.5 4"/><path d="M12 17h.01"/></svg></div>
+                        <h3>Guess the NBA Jumper</h3>
+                        <p>Name the pro from their silhouette. A new Daily Showdown every day, plus an endless mode with streaks and leaderboards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Wolverine Interactive LLC. All rights reserved.</p>
-            <p>
-                <a href="assets/RateMyJumper/Privacy%20Policy%20for%20RateMyJumper.pdf" target="_blank">Privacy Policy</a>
-                &nbsp;|&nbsp;
-                <a href="assets/RateMyJumper/RateMyJumper_TermsOfService.pdf" target="_blank">Terms of Service</a>
-            </p>
+            <div class="footer-bottom">
+                <span>&copy; <span data-year>2026</span> Wolverine Interactive LLC. All rights reserved.</span>
+                <div class="legal-links">
+                    <a href="assets/RateMyJumper/Privacy%20Policy%20for%20RateMyJumper.pdf" target="_blank" rel="noopener">Privacy Policy</a>
+                    <a href="assets/RateMyJumper/RateMyJumper_TermsOfService.pdf" target="_blank" rel="noopener">Terms of Service</a>
+                    <a href="mailto:support@wolverineinteractive.com">Support</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Logo Visibility
-        const logo = document.getElementById('logo');
-        const logoImg = new Image();
-        logoImg.onload = function() {
-            logo.classList.add('visible');
-        };
-        logoImg.onerror = function() {
-            logo.classList.remove('visible');
-        };
-        logoImg.src = 'logo.png';
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

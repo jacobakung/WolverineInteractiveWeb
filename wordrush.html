@@ -3,93 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WordRush - Wolverine Interactive LLC</title>
-    <meta name="description" content="WordRush - An exciting word puzzle game that challenges your vocabulary and quick thinking skills.">
+    <title>WordRush — Wolverine Interactive</title>
+    <meta name="description" content="WordRush is a fast word game: drag across adjacent letter tiles to build words before the timer runs out. Classic, Daily Board, Marathon, and real-time Quick Match modes.">
+    <meta name="theme-color" content="#0b0f1a">
+    <meta property="og:title" content="WordRush — Wolverine Interactive">
+    <meta property="og:description" content="Drag across letter tiles to build words against the clock. Four modes, including real-time 1v1.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wolverineinteractive.com/wordrush.html">
+    <meta property="og:image" content="https://wolverineinteractive.com/assets/icons/wordrush.png">
+    <link rel="icon" href="assets/icons/wordrush.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
+    <style>:root { --accent: #ffd23f; }</style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo-container">
-                    <img src="logo.png" alt="Wolverine Interactive LLC Logo" class="logo" id="logo">
-                    <a href="index.html" class="company-name" style="text-decoration: none; color: var(--text-light);">Wolverine Interactive LLC</a>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#games">Games</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="brand" aria-label="Wolverine Interactive home">
+                <span class="brand-mark" aria-hidden="true">W</span>
+                <span class="brand-name">Wolverine <span>Interactive</span></span>
+            </a>
+            <nav class="nav-links" id="navLinks" aria-label="Primary">
+                <a href="index.html#games">Games</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact" class="nav-cta">Contact</a>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-    </nav>
+    </header>
 
-    <section class="game-hero">
-        <div class="container">
-            <div class="game-hero-content">
-                <img src="assets/ICON.png" alt="WordRush Icon" class="game-hero-icon">
+    <main>
+        <section class="game-hero">
+            <div class="container game-hero-content">
+                <img src="assets/icons/wordrush.png" alt="WordRush app icon" class="game-hero-icon" width="200" height="200">
                 <div class="game-hero-info">
+                    <p class="breadcrumb"><a href="index.html#games">Games</a> / WordRush</p>
                     <h1 class="game-hero-title">WordRush</h1>
-                    <p class="game-hero-description">An exciting word puzzle game that challenges your vocabulary and quick thinking skills.</p>
-                    <div class="game-platforms">
-                        <span class="platform-tag">iOS</span>
-                        <span class="platform-tag">Android</span>
+                    <p class="game-hero-description">Drag across adjacent letter tiles to build words before the timer runs out. Easy to learn, tough to master, and built for one-more-round sessions.</p>
+                    <div class="game-hero-actions">
+                        <a class="btn btn-primary btn-lg" href="https://apps.apple.com/app/id6754856456" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.63c-.02-2.3 1.88-3.4 1.96-3.45-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.97.9-3.77 2.28-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.02-1.13 2.78-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.42-.93-2.44-3.69zM14.09 5.9c.63-.77 1.06-1.84.94-2.9-.91.04-2.02.61-2.67 1.37-.58.68-1.1 1.77-.96 2.81 1.02.08 2.05-.52 2.69-1.28z"/></svg>Download on the App Store</a>
+                        <ul class="platform-list" aria-label="Platforms">
+                            <li class="platform-tag">iOS</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="game-preview-section">
-        <div class="container">
-            <h2 class="section-title">Gameplay Preview</h2>
-            <div class="game-video-wrapper">
-                <video class="game-video" controls playsinline>
-                    <source src="assets/Classic Preview/Classic Preview.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Four ways to play</h2>
+                    <p class="section-lead">Every mode uses the same board and the same rule: connect touching tiles, longer words score more.</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature">
+                        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+                        <h3>Classic</h3>
+                        <p>A timed round on a 4×4 or 5×5 board. Find as many words as you can before the clock hits zero.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+                        <h3>Daily Board</h3>
+                        <p>One shared board every day. Everyone gets the same letters, so the only variable is you.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l5-16M15 4l5 16M8 14h8"/></svg></div>
+                        <h3>Marathon</h3>
+                        <p>Keep the run alive. Words buy you time, and the board keeps refilling for as long as you can keep up.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M5 3h14v4a7 7 0 0 1-14 0zM5 5H2v2a3 3 0 0 0 3 3M19 5h3v2a3 3 0 0 1-3 3"/></svg></div>
+                        <h3>Quick Match</h3>
+                        <p>Real-time 1v1 against another player on the same board. Win to climb the trophy ladder.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-head center">
+                    <h2 class="section-title">See it in motion</h2>
+                    <p class="section-lead">Classic mode on both board sizes.</p>
+                </div>
+                <div class="video-grid">
+                    <figure class="video-card">
+                        <div class="video-frame">
+                            <video controls playsinline preload="metadata">
+                                <source src="assets/Classic Preview/Classic Preview.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <figcaption>Classic · 4×4 board</figcaption>
+                    </figure>
+                    <figure class="video-card">
+                        <div class="video-frame">
+                            <video controls playsinline preload="metadata">
+                                <source src="assets/Classic5x5Preview/Classic5x5Preview.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <figcaption>Classic · 5×5 board</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Wolverine Interactive LLC. All rights reserved.</p>
-            <p><a href="assets/documents/WordRush_PrivacyPolicy.pdf" target="_blank">Privacy Policy</a></p>
+            <div class="footer-bottom">
+                <span>&copy; <span data-year>2026</span> Wolverine Interactive LLC. All rights reserved.</span>
+                <div class="legal-links">
+                    <a href="assets/documents/WordRush_PrivacyPolicy.pdf" target="_blank" rel="noopener">Privacy Policy</a>
+                    <a href="assets/documents/WordRush_TermsOfUse.pdf" target="_blank" rel="noopener">Terms of Use</a>
+                    <a href="mailto:support@wolverineinteractive.com">Support</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Logo Visibility
-        const logo = document.getElementById('logo');
-        const logoImg = new Image();
-        logoImg.onload = function() {
-            logo.classList.add('visible');
-        };
-        logoImg.onerror = function() {
-            logo.classList.remove('visible');
-        };
-        logoImg.src = 'logo.png';
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

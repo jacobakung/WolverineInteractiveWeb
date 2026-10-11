@@ -14,11 +14,17 @@ A modern, responsive website for Wolverine Interactive LLC game development comp
 
 ```
 WolverineInteractiveWeb/
-├── index.html          # Main HTML file
+├── index.html          # Home page
+├── wordrush.html       # WordRush game page
+├── ratemyjumper.html   # RateMyJumper game page
 ├── styles.css          # All styling
-├── script.js           # JavaScript functionality
+├── script.js           # Nav, footer year, and home-page game cards
 ├── games-data.js       # Games data (easy to update!)
-├── logo.png            # Company logo (add this file)
+├── assets/
+│   ├── icons/          # App icons (512px PNG)
+│   ├── favicon.svg     # Site favicon
+│   ├── documents/      # WordRush legal PDFs
+│   └── RateMyJumper/   # RateMyJumper legal PDFs
 └── README.md           # This file
 ```
 
@@ -26,12 +32,6 @@ WolverineInteractiveWeb/
 
 1. Open `index.html` in a web browser to view the website locally
 2. To deploy online, upload all files to your web hosting service
-
-## Adding Your Logo
-
-1. Save your logo as `logo.png` in the same directory as `index.html`
-2. The logo will automatically appear in the navigation bar
-3. Recommended logo size: 40px height (width will auto-adjust)
 
 ## Adding New Games
 
@@ -42,56 +42,37 @@ Adding new games is super simple! Just edit the `games-data.js` file:
 
 ```javascript
 {
+    slug: "your-game",
     title: "Your Game Name",
-    description: "Brief description of your game",
-    platforms: ["iOS", "Android", "Web"],
-    image: "path/to/game-image.jpg", // Optional
-    link: "https://your-game-link.com" // Optional
+    tagline: "One sentence that sells it",
+    platforms: ["iOS", "Android"],
+    icon: "assets/icons/your-game.png",
+    accent: "#5b8cff",                 // card glow / button color
+    page: "your-game.html",            // detail page on this site
+    appStore: "https://apps.apple.com/app/idXXXXXXXXXX" // optional
 }
 ```
 
-### Example:
-
-```javascript
-const games = [
-    {
-        title: "WordDash",
-        description: "An exciting word puzzle game that challenges your vocabulary and quick thinking skills.",
-        platforms: ["iOS", "Android"],
-        image: null,
-        link: null
-    },
-    {
-        title: "Your New Game",
-        description: "Description of your new amazing game",
-        platforms: ["iOS", "Android", "Web"],
-        image: "images/new-game.jpg",
-        link: "https://apps.apple.com/your-game"
-    }
-];
-```
+Then copy `wordrush.html` to `your-game.html` and edit the hero, features, and legal links.
 
 ## Customization
 
 ### Changing Colors
 
-Edit the CSS variables in `styles.css` (lines 11-20):
+Edit the CSS variables at the top of `styles.css`:
 
 ```css
 :root {
-    --primary-color: #1a73e8;      /* Main brand color */
-    --secondary-color: #34a853;    /* Secondary accent color */
-    --dark-bg: #1a1a2e;            /* Dark background */
+    --bg: #0b0f1a;        /* Page background */
+    --brand: #5b8cff;     /* Brand accent */
+    --text: #f3f5f9;      /* Body text */
     /* ... more colors ... */
 }
 ```
 
 ### Updating Company Information
 
-Edit the content in `index.html`:
-- Company name: Line 13 and Line 16
-- About section: Lines 47-51
-- Contact information: Lines 57-63
+Edit the content in `index.html` (About and Contact sections).
 
 ## Browser Support
 

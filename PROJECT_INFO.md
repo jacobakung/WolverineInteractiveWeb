@@ -12,19 +12,28 @@ This is the company website for **Wolverine Interactive LLC**, a game developmen
 - **Company Email:** wolverineinteractive@gmail.com
 
 ## Current Games
-1. **WordRush** - Word puzzle game
-   - Platforms: iOS, Android
-   - App Icon: `WordRush.AppIcon.png`
+1. **WordRush** - Boggle-style timed word game (Classic 4×4/5×5, Daily Board, Marathon, Quick Match)
+   - Platforms: iOS
+   - App Store: https://apps.apple.com/app/id6754856456 (listed as "WordRush GO")
+   - Icon: `assets/icons/wordrush.png`
+2. **RateMyJumper** - Rate your basketball jump shot (crowd Elo rating + AI baseline vs NBA forms, Guess the NBA Jumper)
+   - Platforms: iOS
+   - App Store: https://apps.apple.com/app/id6776380978
+   - Icon: `assets/icons/ratemyjumper.png`
 
 ## File Structure
 ```
 WolverineInteractiveWeb/
-├── index.html              # Main HTML file
-├── styles.css              # All styling
-├── script.js               # JavaScript functionality
+├── index.html              # Home page
+├── wordrush.html           # WordRush game page
+├── ratemyjumper.html       # RateMyJumper game page
+├── styles.css              # All styling (CSS variables at the top)
+├── script.js               # Nav toggle, footer year, home-page game cards
 ├── games-data.js           # Games database (EDIT THIS TO ADD GAMES)
-├── WordRush.AppIcon.png    # WordRush game icon
-├── logo.png                # Company logo (NOT YET ADDED)
+├── assets/icons/           # App icons, 512px PNG
+├── assets/favicon.svg      # Site favicon (inline "W" monogram; no logo.png needed)
+├── assets/documents/       # WordRush legal PDFs
+├── assets/RateMyJumper/    # RateMyJumper legal PDFs
 ├── README.md               # User documentation
 └── PROJECT_INFO.md         # This file - for Claude reference
 ```
@@ -35,15 +44,18 @@ WolverineInteractiveWeb/
 
 ```javascript
 {
+    slug: "game-name",
     title: "Game Name",
-    description: "Brief description of the game",
-    platforms: ["iOS", "Android", "Web"],
-    image: "path/to/game-icon.png",  // Optional
-    link: "https://app-store-link.com"  // Optional
+    tagline: "One sentence that sells it",
+    platforms: ["iOS", "Android"],
+    icon: "assets/icons/game-name.png",
+    accent: "#5b8cff",
+    page: "game-name.html",
+    appStore: "https://apps.apple.com/app/idXXXXXXXXXX"  // Optional
 }
 ```
 
-The website will automatically display the new game card.
+The home page card is generated automatically. Copy `wordrush.html` for the detail page.
 
 ## Git Workflow
 
@@ -88,9 +100,8 @@ git push origin main
 ## Important Notes
 
 ### Logo
-- Company logo should be saved as `logo.png` in the root directory
-- Logo will automatically appear in navigation bar when added
-- Recommended size: 40px height
+- The nav uses an inline "W" monogram (`.brand-mark` in styles.css) and `assets/favicon.svg`.
+- To use a real logo, replace the monogram span in all three HTML files.
 
 ### Updating Content
 
@@ -98,7 +109,7 @@ git push origin main
 - Edit `index.html` (sections: About, Contact)
 
 **To change colors/styling:**
-- Edit CSS variables in `styles.css` (lines 11-20)
+- Edit CSS variables at the top of `styles.css`
 
 **To add game images:**
 - Save image in project folder
@@ -132,9 +143,9 @@ open https://wolverineinteractive.com
 ```
 
 ## Future TODOs
-- [ ] Add company logo (logo.png)
+- [ ] Replace the "W" monogram with a real company logo
 - [ ] Add more games as they're developed
-- [ ] Add app store links to WordRush when available
+- [x] Add app store links to WordRush and RateMyJumper
 - [ ] Consider adding blog/news section
 - [ ] Add social media links
 

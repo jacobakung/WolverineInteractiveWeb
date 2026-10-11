@@ -1,121 +1,105 @@
-// Mobile Menu Toggle
-const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-const navLinks = document.querySelector('.nav-links');
+(function () {
+    // ----- Mobile navigation -----
+    const toggle = document.getElementById('mobileMenuToggle');
+    const navLinks = document.getElementById('navLinks');
 
-mobileMenuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+    if (toggle && navLinks) {
+        toggle.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('open');
+            toggle.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', String(open));
+        });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-    });
-});
-
-// Logo Visibility - Show logo if logo.png exists
-const logo = document.getElementById('logo');
-const logoImg = new Image();
-logoImg.onload = function() {
-    logo.classList.add('visible');
-};
-logoImg.onerror = function() {
-    // Logo doesn't exist yet, keep it hidden
-    logo.classList.remove('visible');
-};
-logoImg.src = 'logo.png';
-
-// Dynamically Load Games
-function loadGames() {
-    const gamesGrid = document.getElementById('gamesGrid');
-
-    if (games.length === 0) {
-        gamesGrid.innerHTML = '<p style="text-align: center; color: #666;">No games available yet. Check back soon!</p>';
-        return;
-    }
-
-    games.forEach(game => {
-        const gameCard = createGameCard(game);
-        gamesGrid.appendChild(gameCard);
-    });
-}
-
-function createGameCard(game) {
-    const card = document.createElement('div');
-    card.className = 'game-card';
-
-    // Create image section
-    const imageDiv = document.createElement('div');
-    imageDiv.className = 'game-image';
-
-    if (game.image) {
-        const img = document.createElement('img');
-        img.src = game.image;
-        img.alt = game.title;
-        img.style.width = '100%';
-        img.style.height = '100%';
-        img.style.objectFit = 'cover';
-        imageDiv.appendChild(img);
-    } else {
-        // Use first letter of game title as placeholder
-        imageDiv.textContent = game.title.charAt(0);
-    }
-
-    // Create content section
-    const content = document.createElement('div');
-    content.className = 'game-content';
-
-    const title = document.createElement('h3');
-    title.className = 'game-title';
-    title.textContent = game.title;
-
-    const description = document.createElement('p');
-    description.className = 'game-description';
-    description.textContent = game.description;
-
-    const platformsDiv = document.createElement('div');
-    platformsDiv.className = 'game-platforms';
-
-    game.platforms.forEach(platform => {
-        const tag = document.createElement('span');
-        tag.className = 'platform-tag';
-        tag.textContent = platform;
-        platformsDiv.appendChild(tag);
-    });
-
-    content.appendChild(title);
-    content.appendChild(description);
-    content.appendChild(platformsDiv);
-
-    card.appendChild(imageDiv);
-    card.appendChild(content);
-
-    // Add click handler if link is available
-    if (game.link) {
-        card.style.cursor = 'pointer';
-        card.addEventListener('click', () => {
-            window.location.href = game.link;
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                toggle.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
         });
     }
 
-    return card;
-}
+    // ----- Elevate the navbar once the page scrolls -----
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 8);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+    }
 
-// Initialize games when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    loadGames();
-});
-
-// Smooth scroll for navigation links (fallback for browsers that don't support CSS scroll-behavior)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+    // ----- Footer year -----
+    document.querySelectorAll('[data-year]').forEach(el => {
+        el.textContent = new Date().getFullYear();
     });
-});
+
+    // ----- Games grid (home page only) -----
+    const grid = document.getElementById('gamesGrid');
+    if (grid && typeof games !== 'undefined') {
+        if (games.length === 0) {
+            grid.innerHTML = '<p class="muted center">No games available yet. Check back soon!</p>';
+            return;
+        }
+        games.forEach(game => grid.appendChild(createGameCard(game)));
+    }
+
+    function createGameCard(game) {
+        const card = document.createElement('article');
+        card.className = 'game-card';
+        card.style.setProperty('--accent', game.accent || '#5b8cff');
+
+        const icon = document.createElement('img');
+        icon.className = 'game-card-icon';
+        icon.src = game.icon;
+        icon.alt = game.title + ' app icon';
+        icon.width = 96;
+        icon.height = 96;
+        icon.loading = 'lazy';
+
+        const body = document.createElement('div');
+        body.className = 'game-card-body';
+
+        const title = document.createElement('h3');
+        title.className = 'game-card-title';
+        const titleLink = document.createElement('a');
+        titleLink.href = game.page;
+        titleLink.textContent = game.title;
+        title.appendChild(titleLink);
+
+        const tagline = document.createElement('p');
+        tagline.className = 'game-card-tagline';
+        tagline.textContent = game.tagline;
+
+        const platforms = document.createElement('ul');
+        platforms.className = 'platform-list';
+        platforms.setAttribute('aria-label', 'Platforms');
+        (game.platforms || []).forEach(p => {
+            const li = document.createElement('li');
+            li.className = 'platform-tag';
+            li.textContent = p;
+            platforms.appendChild(li);
+        });
+
+        const actions = document.createElement('div');
+        actions.className = 'game-card-actions';
+
+        const more = document.createElement('a');
+        more.className = 'btn btn-ghost';
+        more.href = game.page;
+        more.textContent = 'Learn more';
+        actions.appendChild(more);
+
+        if (game.appStore) {
+            const store = document.createElement('a');
+            store.className = 'btn btn-primary';
+            store.href = game.appStore;
+            store.target = '_blank';
+            store.rel = 'noopener';
+            store.textContent = 'App Store';
+            actions.appendChild(store);
+        }
+
+        body.append(title, tagline, platforms, actions);
+        card.append(icon, body);
+        return card;
+    }
+})();

@@ -1,34 +1,35 @@
 // Games Data
-// To add a new game, simply add a new object to this array with the following structure:
+// To add a new game, add an object to this array. Fields:
 // {
+//     slug: "my-game",                      // used for the card id
 //     title: "Game Title",
-//     description: "Brief description of the game",
-//     platforms: ["iOS", "Android", "Web"], // Array of platform names
-//     image: "path/to/image.jpg", // Optional: path to game image
-//     link: "https://link-to-game.com" // Optional: link to game page or store
+//     tagline: "One sentence that sells it",
+//     platforms: ["iOS"],
+//     icon: "assets/icons/my-game.png",     // square app icon
+//     accent: "#5b8cff",                    // card glow / accent color
+//     page: "my-game.html",                 // detail page on this site
+//     appStore: "https://apps.apple.com/app/idXXXXXXXXXX" // optional
 // }
 
 const games = [
     {
+        slug: "wordrush",
         title: "WordRush",
-        description: "An exciting word puzzle game that challenges your vocabulary and quick thinking skills.",
-        platforms: ["iOS", "Android"],
-        image: "assets/ICON.png",
-        link: "wordrush.html"
+        tagline: "Drag across letter tiles to build words against the clock. Four modes, including real-time 1v1.",
+        platforms: ["iOS"],
+        icon: "assets/icons/wordrush.png",
+        accent: "#ffd23f",
+        page: "wordrush.html",
+        appStore: "https://apps.apple.com/app/id6754856456"
     },
     {
+        slug: "ratemyjumper",
         title: "RateMyJumper",
-        description: "Rate the best jumpers in basketball and see how your picks stack up against other fans.",
+        tagline: "Upload your jump shot, get rated by the crowd and scored against NBA shooting forms.",
         platforms: ["iOS"],
-        link: "ratemyjumper.html"
+        icon: "assets/icons/ratemyjumper.png",
+        accent: "#e8421a",
+        page: "ratemyjumper.html",
+        appStore: "https://apps.apple.com/app/id6776380978"
     }
-    // Add more games here as you develop them
-    // Example:
-    // {
-    //     title: "Your Next Game",
-    //     description: "Description of your next amazing game",
-    //     platforms: ["iOS", "Android", "Web"],
-    //     image: "images/next-game.jpg",
-    //     link: "https://link-to-game.com"
-    // }
 ];
