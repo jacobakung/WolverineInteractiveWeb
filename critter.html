@@ -6,20 +6,22 @@
     <title>Critter — Wolverine Interactive</title>
     <meta name="description" content="Critter ranks the films and shows you watch by head-to-head comparison instead of stars, and lets you argue about it with your friends.">
     <meta name="theme-color" content="#0b0f1a">
-    <meta name="robots" content="noindex">
     <meta property="og:title" content="Critter — Wolverine Interactive">
     <meta property="og:description" content="Rank what you watch. Argue about it with people you trust.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wolverineinteractive.com/critter.html">
     <meta property="og:image" content="https://wolverineinteractive.com/assets/icons/critter.png">
     <link rel="icon" href="assets/icons/critter.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=20261011a">
+    <link rel="stylesheet" href="styles.css?v=20261123a">
     <style>
         :root { --accent: #f0c477; }
         .support-card { max-width: 720px; margin: 0 auto; }
         .support-card p { color: var(--muted); margin-bottom: 14px; }
         .support-card a { color: var(--accent); }
         .support-card h3 { margin: 24px 0 8px; }
+        .shot-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .shot-grid img { width: 100%; height: auto; display: block; border-radius: 22px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+        @media (max-width: 900px) { .shot-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
     </style>
 </head>
 <body>
@@ -30,7 +32,7 @@
                 <span class="brand-name">Wolverine <span>Interactive</span></span>
             </a>
             <nav class="nav-links" id="navLinks" aria-label="Primary">
-                <a href="index.html#games">Games</a>
+                <a href="index.html#games">Games &amp; Apps</a>
                 <a href="index.html#about">About</a>
                 <a href="index.html#contact" class="nav-cta">Contact</a>
             </nav>
@@ -45,7 +47,7 @@
             <div class="container game-hero-content">
                 <img src="assets/icons/critter.png" alt="Critter app icon" class="game-hero-icon" width="200" height="200">
                 <div class="game-hero-info">
-                    <p class="breadcrumb"><a href="index.html#games">Apps</a> / Critter</p>
+                    <p class="breadcrumb"><a href="index.html#games">Games &amp; Apps</a> / Critter</p>
                     <h1 class="game-hero-title">Critter</h1>
                     <p class="game-hero-description">Rank what you watch. Argue about it with people you trust. No stars out of five: you compare each film or show against what you've already seen, and Critter puts it exactly where it belongs.</p>
                     <div class="game-hero-actions">
@@ -89,7 +91,22 @@
             </div>
         </section>
 
-        <section class="section" id="support">
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Take a look</h2>
+                    <p class="section-lead">The feed, your profile, search, and your ranked list.</p>
+                </div>
+                <div class="shot-grid">
+                    <img src="assets/critter/feed.jpg" alt="Critter feed showing friends' rankings and takes" width="660" height="1434" loading="lazy">
+                    <img src="assets/critter/profile.jpg" alt="Critter profile with top five, stats and critic badges" width="660" height="1434" loading="lazy">
+                    <img src="assets/critter/search.jpg" alt="Critter search with rows of films to discover" width="660" height="1434" loading="lazy">
+                    <img src="assets/critter/ranked.jpg" alt="Critter ranked list of films with scores" width="660" height="1434" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="support">
             <div class="container support-card">
                 <h2 class="section-title">Support</h2>
                 <p>Questions, bugs, or a report about content or another user: email <a href="mailto:support@wolverineinteractive.com">support@wolverineinteractive.com</a>. We aim to respond within 24 hours.</p>

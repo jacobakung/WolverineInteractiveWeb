@@ -17,6 +17,8 @@ WolverineInteractiveWeb/
 ├── index.html          # Home page
 ├── wordrush.html       # WordRush game page
 ├── ratemyjumper.html   # RateMyJumper game page
+├── critter.html        # Critter app page
+├── critter/            # Critter privacy policy and terms
 ├── styles.css          # All styling
 ├── script.js           # Nav, footer year, and home-page game cards
 ├── games-data.js       # Games data (easy to update!)

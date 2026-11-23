@@ -20,6 +20,11 @@ This is the company website for **Wolverine Interactive LLC**, a game developmen
    - Platforms: iOS
    - App Store: https://apps.apple.com/app/id6776380978
    - Icon: `assets/icons/ratemyjumper.png`
+3. **Critter** - Rank films and shows by head-to-head comparison, with takes, friends, lists and a watchlist (app, not a game)
+   - Platforms: iOS
+   - App Store: not live yet; add `appStore` in `games-data.js` and a badge on `critter.html` when it is
+   - Icon: `assets/icons/critter.png` (from `../Critter/MediaRank/Assets.xcassets/AppIcon.appiconset/AppIcon.png`)
+   - Legal: `critter/privacy.html`, `critter/terms.html`
 
 ## File Structure
 ```
@@ -27,6 +32,8 @@ WolverineInteractiveWeb/
 ├── index.html              # Home page
 ├── wordrush.html           # WordRush game page
 ├── ratemyjumper.html       # RateMyJumper game page
+├── critter.html            # Critter app page (also its support page)
+├── critter/                # Critter privacy policy and terms (HTML)
 ├── styles.css              # All styling (CSS variables at the top)
 ├── script.js               # Nav toggle, footer year, home-page game cards
 ├── games-data.js           # Games database (EDIT THIS TO ADD GAMES)

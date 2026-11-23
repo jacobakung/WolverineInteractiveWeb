@@ -125,11 +125,12 @@ ul { list-style: none; }
 
 .hero-art { position: relative; height: 380px; }
 .hero-art img {
-    position: absolute; width: 200px; height: 200px; border-radius: 44px;
+    position: absolute; width: 170px; height: 170px; border-radius: 38px;
     box-shadow: var(--shadow); animation: float 6s ease-in-out infinite;
 }
-.hero-art .art-1 { left: 8%; top: 8%; transform: rotate(-8deg); }
-.hero-art .art-2 { right: 6%; bottom: 6%; transform: rotate(7deg); animation-delay: -3s; }
+.hero-art .art-1 { left: 4%; top: 2%; transform: rotate(-8deg); }
+.hero-art .art-2 { right: 4%; top: 24%; transform: rotate(7deg); animation-delay: -3s; }
+.hero-art .art-3 { left: 20%; bottom: 0; transform: rotate(-3deg); animation-delay: -1.5s; }
 .hero-art::after {
     content: ""; position: absolute; inset: 20% 10%; border-radius: 50%; z-index: -1;
     background: radial-gradient(closest-side, rgba(255,210,63,0.18), transparent 70%);
@@ -256,13 +257,35 @@ ul { list-style: none; }
 
 .legal-links { display: flex; gap: 18px; flex-wrap: wrap; }
 
+.app-store-badge {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 12px 26px 12px 20px; border-radius: 14px;
+    background: #fff; color: #000; text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 0 4px color-mix(in srgb, var(--accent) 35%, transparent);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+.app-store-badge:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0,0,0,0.45), 0 0 0 6px color-mix(in srgb, var(--accent) 55%, transparent); }
+.app-store-badge svg { width: 34px; height: 34px; flex-shrink: 0; }
+.app-store-badge-text { display: flex; flex-direction: column; line-height: 1.05; text-align: left; }
+.app-store-badge-text small { font-size: 0.78rem; font-weight: 500; }
+.app-store-badge-text strong { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; }
+
+.download-card {
+    display: flex; align-items: center; gap: 28px; padding: 36px 40px;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 16%, var(--surface)), var(--surface-2));
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border)); border-radius: var(--radius);
+}
+.download-card-icon { width: 96px; height: 96px; border-radius: 22px; flex-shrink: 0; box-shadow: var(--shadow); }
+.download-card-copy { flex: 1; min-width: 0; }
+.download-card-copy .section-lead { margin: 0; }
+
 /* --------------------------------------------------------------------------
    Responsive
    -------------------------------------------------------------------------- */
 @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; gap: 24px; }
     .hero-art { height: 260px; max-width: 420px; margin: 0 auto; width: 100%; }
-    .hero-art img { width: 150px; height: 150px; border-radius: 34px; }
+    .hero-art img { width: 120px; height: 120px; border-radius: 27px; }
     .about-grid { grid-template-columns: 1fr; gap: 28px; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -287,6 +310,7 @@ ul { list-style: none; }
     .game-hero-icon { width: 150px; height: 150px; border-radius: 34px; }
     .game-hero-description { margin-left: auto; margin-right: auto; }
     .game-hero-actions { justify-content: center; }
+    .download-card { flex-direction: column; text-align: center; padding: 32px 22px; }
     .footer-grid { grid-template-columns: 1fr; gap: 24px; }
     .footer-bottom { justify-content: center; text-align: center; }
 }
@@ -294,5 +318,5 @@ ul { list-style: none; }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .hero-art img { animation: none; }
-    .btn, .game-card { transition: none; }
+    .btn, .game-card, .app-store-badge { transition: none; }
 }

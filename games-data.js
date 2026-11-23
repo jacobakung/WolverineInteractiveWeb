@@ -1,5 +1,5 @@
-// Games Data
-// To add a new game, add an object to this array. Fields:
+// Games & Apps Data
+// To add a new game or app, add an object to this array. Fields:
 // {
 //     slug: "my-game",                      // used for the card id
 //     title: "Game Title",
@@ -31,5 +31,15 @@ const games = [
         accent: "#e8421a",
         page: "ratemyjumper.html",
         appStore: "https://apps.apple.com/app/id6776380978"
+    },
+    {
+        slug: "critter",
+        title: "Critter",
+        tagline: "Rank the films and shows you watch head-to-head instead of with stars, then argue about it with your friends.",
+        platforms: ["iOS"],
+        icon: "assets/icons/critter.png",
+        accent: "#f0c477",
+        page: "critter.html"
+        // appStore: add the link here once Critter is live on the App Store
     }
 ];
