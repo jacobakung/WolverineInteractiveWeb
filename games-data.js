@@ -39,7 +39,7 @@ const games = [
         platforms: ["iOS"],
         icon: "assets/icons/critter.png",
         accent: "#f0c477",
-        page: "critter.html"
-        // appStore: add the link here once Critter is live on the App Store
+        page: "critter.html",
+        appStore: "https://apps.apple.com/app/id6834116286"
     }
 ];
